@@ -11,12 +11,7 @@ elif echo $OUTPUT | grep -q "CentOS Linux 8" ; then
         SERVER_OS="CentOS8"
 yum install curl wget -y 1> /dev/null
 yum update curl wget ca-certificates -y 1> /dev/null
-elif echo $OUTPUT | grep -q "CloudLinux 7" ; then
-        echo "Checking and installing curl and wget"
-yum install curl wget -y 1> /dev/null
-yum update curl wget ca-certificates -y 1> /dev/null
-                SERVER_OS="CloudLinux"
-elif echo $OUTPUT | grep -q "CloudLinux 8" ; then
+elif echo $OUTPUT | grep -q -E "CloudLinux 7|CloudLinux 8" ; then
         echo "Checking and installing curl and wget"
 yum install curl wget -y 1> /dev/null
 yum update curl wget ca-certificates -y 1> /dev/null
